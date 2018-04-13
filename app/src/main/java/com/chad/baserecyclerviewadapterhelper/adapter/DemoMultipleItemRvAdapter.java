@@ -6,18 +6,19 @@ import com.chad.baserecyclerviewadapterhelper.adapter.provider.ImgItemProvider;
 import com.chad.baserecyclerviewadapterhelper.adapter.provider.TextImgItemProvider;
 import com.chad.baserecyclerviewadapterhelper.adapter.provider.TextItemProvider;
 import com.chad.baserecyclerviewadapterhelper.entity.NormalMultipleEntity;
+import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.MultipleItemRvAdapter;
 
 import java.util.List;
 
 /**
- * https://github.com/chaychan
  * @author ChayChan
+ * modify by AllenCoder 2018/04/11
  * @description: MultipleItemRvAdapter demo
  * @date 2018/3/30  11:28
  */
 
-public class DemoMultipleItemRvAdapter extends MultipleItemRvAdapter<NormalMultipleEntity> {
+public class DemoMultipleItemRvAdapter extends MultipleItemRvAdapter<NormalMultipleEntity, BaseViewHolder> {
 
     public static final int TYPE_TEXT = 100;
     public static final int TYPE_IMG = 200;
@@ -44,11 +45,11 @@ public class DemoMultipleItemRvAdapter extends MultipleItemRvAdapter<NormalMulti
         //根据实体类判断并返回对应的viewType，具体判断逻辑因业务不同，这里这是简单通过判断type属性
         //According to the entity class to determine and return the corresponding viewType,
         //the specific judgment logic is different because of the business, here is simply by judging the type attribute
-        if (entity.type == NormalMultipleEntity.SINGLE_TEXT){
+        if (entity.type == NormalMultipleEntity.SINGLE_TEXT) {
             return TYPE_TEXT;
-        }else if (entity.type == NormalMultipleEntity.SINGLE_IMG){
+        } else if (entity.type == NormalMultipleEntity.SINGLE_IMG) {
             return TYPE_IMG;
-        }else if (entity.type == NormalMultipleEntity.TEXT_IMG){
+        } else if (entity.type == NormalMultipleEntity.TEXT_IMG) {
             return TYPE_TEXT_IMG;
         }
         return 0;
